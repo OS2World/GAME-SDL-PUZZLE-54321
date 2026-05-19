@@ -7,7 +7,8 @@ ifdef HAS_NOWEB
     LINE_NUMBERS := -L
 endif
 
-ARCH := $(shell uname -s)
+#ARCH := $(shell uname -s)
+ARCH := OS2
 BUILD := Build/$(ARCH)
 CODE  := code
 
