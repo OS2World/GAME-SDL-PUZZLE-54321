@@ -119,7 +119,7 @@
                     this->hasWon = ( this->blankSpot == len-1 );
 
                     for ( unsigned int ii=0; this->hasWon && ii < len; ++ii ) {
-                        hasWon = ( (*this->cube)[ ii ] == ii );
+                        hasWon = ( (*this->cube)[ ii ] == (int)ii );
                     }
 
                     if ( this->hasWon && this->view != 0 ) {

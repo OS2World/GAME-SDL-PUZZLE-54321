@@ -41,7 +41,6 @@
             unsigned int len
                 = NKlein_54321::Cube::arrayLengths[ this->dims ];
 
-            unsigned int distinctSets = len;
                 struct WallInfo {
                     unsigned int from;
                     unsigned int to;
@@ -71,7 +70,7 @@
                     unsigned int setFrom = this->set( walls[ nn ].from );
                     unsigned int setTo = this->set( walls[ nn ].to );
 
-                    if ( setFrom != setTo || ( random() % 100 ) < extraWallPercent ) {
+                    if ( setFrom != setTo || (unsigned int)( random() % 100 ) < extraWallPercent ) {
                                 unsigned int vf[ NKlein_54321::Cube::DIMENSIONS ];
                                 NKlein_54321::Cube::indexToVector( walls[ nn ].from, vf );
 

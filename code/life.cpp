@@ -79,8 +79,6 @@
         void
         NKlein_54321::Life::generation( void )
         {
-            bool update = false;
-
                 Cube cc;
                 unsigned int len
                     = NKlein_54321::Cube::arrayLengths[ this->dims ];

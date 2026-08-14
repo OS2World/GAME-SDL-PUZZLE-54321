@@ -32,8 +32,8 @@
                             SDL_Surface* overlay;
                             SDL_Surface* logos[ MAX_GAME ];
                             SDL_Surface* quitButton[2];
-                            SDL_Surface* screen;
                             bool quitPressed;
+                            SDL_Surface* screen;
                             static SDL_Rect quitBox;
                             static SDL_Rect boxes[ MAX_GAME ];
             };

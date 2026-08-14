@@ -46,7 +46,6 @@
                 unsigned int buttonNumber
             )
         {
-            unsigned int index;
             bool hit;
 
             hit = this->view.handleMouseClick(

@@ -103,7 +103,7 @@
             if ( this->currentLen > 0 ) {
                 unsigned int copyLen = this->currentLen;
 
-                if ( copyLen > len ) {
+                if ( copyLen > (unsigned int)len ) {
                     copyLen = len;
                 }
 

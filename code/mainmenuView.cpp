@@ -81,10 +81,10 @@
             ) const
         {
             assert( game < MAX_GAME );
-            return xx >= boxes[ game ].x
-                && xx <  boxes[ game ].x + boxes[ game ].w
-                && yy >= boxes[ game ].y
-                && yy <  boxes[ game ].y + boxes[ game ].h;
+            return xx >= (unsigned int)boxes[ game ].x
+                && xx <  (unsigned int)boxes[ game ].x + (unsigned int)boxes[ game ].w
+                && yy >= (unsigned int)boxes[ game ].y
+                && yy <  (unsigned int)boxes[ game ].y + (unsigned int)boxes[ game ].h;
         }
         bool
         NKlein_54321::MainMenuView::handleMouseClick(
@@ -96,8 +96,8 @@
             )
         {
                 bool hitQuit = (
-                           xx >= quitBox.x && xx < quitBox.x + quitBox.w
-                        && yy >= quitBox.y && yy < quitBox.y + quitBox.h
+                           xx >= (unsigned int)quitBox.x && xx < (unsigned int)quitBox.x + (unsigned int)quitBox.w
+                        && yy >= (unsigned int)quitBox.y && yy < (unsigned int)quitBox.y + (unsigned int)quitBox.h
                     );
 
             if ( hitQuit && ! isMouseUp ) {

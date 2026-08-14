@@ -87,6 +87,7 @@ SRCS := \
 	$(CODE)/life.cpp \
 	$(CODE)/lifeController.cpp \
 	$(CODE)/lifeView.cpp \
+	$(CODE)/sdl2compat.cpp \
 	$(CODE)/main.cpp
 
 OBJS := \

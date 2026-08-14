@@ -180,10 +180,10 @@
                 unsigned int ii
             )
         {
-            return ( xx >= this->bLocation[ ii ].x
-                && xx < this->bLocation[ ii ].x + this->bLocation[ ii ].w
-                && yy >= this->bLocation[ ii ].y
-                && yy < this->bLocation[ ii ].y + this->bLocation[ ii ].h
+            return ( xx >= (unsigned int)this->bLocation[ ii ].x
+                && xx < (unsigned int)this->bLocation[ ii ].x + (unsigned int)this->bLocation[ ii ].w
+                && yy >= (unsigned int)this->bLocation[ ii ].y
+                && yy < (unsigned int)this->bLocation[ ii ].y + (unsigned int)this->bLocation[ ii ].h
             );
         }
         bool
@@ -199,7 +199,7 @@
                 unsigned int sx = startCoords[ dims ][ 0 ];
                 unsigned int sy = startCoords[ dims ][ 1 ];
 
-                if ( xx < sx || sy < sy ) {
+                if ( xx < sx || yy < sy ) {
                     return false;
                 }
 
@@ -283,7 +283,7 @@
                 bool update
             )
         {
-            SDL_Surface** images;
+            SDL_Surface** images = 0;
 
                 if ( button >= DIM_2 && button <= DIM_4 ) {
                     images = this->dimButton;

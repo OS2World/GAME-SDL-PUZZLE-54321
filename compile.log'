@@ -1,0 +1,145 @@
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/cube.o code/cube.cpp
+In file included from code/cube.cpp:1:
+code/cube.cpp: In member function 'void NKlein_54321::Cube::operator=(const CellType&)':
+code/cube.cpp:21:32: warning: the compiler can assume that the address of 'value' will never be NULL [-Waddress]
+   21 |                 assert( &value != 0 );
+      |                         ~~~~~~~^~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/font.o code/font.cpp
+code/font.cpp: In member function 'virtual void NKlein_54321::Font::centerMessage(SDL_Surface*, bool, int, int, const char*, ...)':
+code/font.cpp:110:44: warning: array subscript has type 'char' [-Wchar-subscripts]
+  110 |                     width += this->widths[ *ptr ];
+      |                                            ^~~~
+code/font.cpp:126:47: warning: array subscript has type 'char' [-Wchar-subscripts]
+  126 |                         src.w = this->widths[ *ptr ];
+      |                                               ^~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/soundDev.o code/soundDev.cpp
+code/soundDev.cpp: In member function 'void NKlein_54321::SoundDev::callback(Uint8*, int)':
+code/soundDev.cpp:106:30: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+  106 |                 if ( copyLen > len ) {
+      |                      ~~~~~~~~^~~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/controller.o code/controller.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/view.o code/view.cpp
+code/view.cpp: In member function 'bool NKlein_54321::View::checkButton(unsigned int, unsigned int, unsigned int)':
+code/view.cpp:183:25: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+  183 |             return ( xx >= this->bLocation[ ii ].x
+      |                      ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+code/view.cpp:184:23: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+  184 |                 && xx < this->bLocation[ ii ].x + this->bLocation[ ii ].w
+      |                    ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code/view.cpp:185:23: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+  185 |                 && yy >= this->bLocation[ ii ].y
+      |                    ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+code/view.cpp:186:23: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+  186 |                 && yy < this->bLocation[ ii ].y + this->bLocation[ ii ].h
+      |                    ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code/view.cpp: In static member function 'static bool NKlein_54321::View::screenToCell(unsigned int, unsigned int, unsigned int, unsigned int*)':
+code/view.cpp:202:36: warning: self-comparison always evaluates to false [-Wtautological-compare]
+  202 |                 if ( xx < sx || sy < sy ) {
+      |                                 ~~ ^ ~~
+code/view.cpp: In member function 'void NKlein_54321::View::drawButton(unsigned int, bool)':
+code/view.cpp:301:17: warning: 'images' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  301 |                 ++images;
+      |                 ^~~~~~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mainmenuController.o code/mainmenuController.cpp
+code/mainmenuController.cpp: In member function 'virtual void NKlein_54321::MainMenuController::handleMouseClick(bool, unsigned int, unsigned int, unsigned int)':
+code/mainmenuController.cpp:49:26: warning: unused variable 'index' [-Wunused-variable]
+   49 |             unsigned int index;
+      |                          ^~~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mainmenuView.o code/mainmenuView.cpp
+In file included from code/mainmenuView.cpp:7:
+code/mainmenuView.h: In constructor 'NKlein_54321::MainMenuView::MainMenuView(SDL_Surface*)':
+code/mainmenuView.h:36:34: warning: 'NKlein_54321::MainMenuView::quitPressed' will be initialized after [-Wreorder]
+   36 |                             bool quitPressed;
+      |                                  ^~~~~~~~~~~
+code/mainmenuView.h:35:42: warning:   'SDL_Surface* NKlein_54321::MainMenuView::screen' [-Wreorder]
+   35 |                             SDL_Surface* screen;
+      |                                          ^~~~~~
+code/mainmenuView.cpp:8:9: warning:   when initialized here [-Wreorder]
+    8 |         NKlein_54321::MainMenuView::MainMenuView(
+      |         ^~~~~~~~~~~~
+code/mainmenuView.cpp: In member function 'bool NKlein_54321::MainMenuView::pointInBox(unsigned int, unsigned int, unsigned int) const':
+code/mainmenuView.cpp:84:23: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+   84 |             return xx >= boxes[ game ].x
+      |                    ~~~^~~~~~~~~~~~~~~~~~
+code/mainmenuView.cpp:85:23: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+   85 |                 && xx <  boxes[ game ].x + boxes[ game ].w
+      |                    ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code/mainmenuView.cpp:86:23: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+   86 |                 && yy >= boxes[ game ].y
+      |                    ~~~^~~~~~~~~~~~~~~~~~
+code/mainmenuView.cpp:87:23: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+   87 |                 && yy <  boxes[ game ].y + boxes[ game ].h;
+      |                    ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code/mainmenuView.cpp: In member function 'virtual bool NKlein_54321::MainMenuView::handleMouseClick(NKlein_54321::Controller*, bool, unsigned int, unsigned int, unsigned int)':
+code/mainmenuView.cpp:99:31: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+   99 |                            xx >= quitBox.x && xx < quitBox.x + quitBox.w
+      |                            ~~~^~~~~~~~~~~~
+code/mainmenuView.cpp:99:50: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+   99 |                            xx >= quitBox.x && xx < quitBox.x + quitBox.w
+      |                                               ~~~^~~~~~~~~~~~~~~~~~~~~~~
+code/mainmenuView.cpp:100:31: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+  100 |                         && yy >= quitBox.y && yy < quitBox.y + quitBox.h
+      |                            ~~~^~~~~~~~~~~~
+code/mainmenuView.cpp:100:50: warning: comparison of integer expressions of different signedness: 'unsigned int' and 'int' [-Wsign-compare]
+  100 |                         && yy >= quitBox.y && yy < quitBox.y + quitBox.h
+      |                                               ~~~^~~~~~~~~~~~~~~~~~~~~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/help.o code/help.cpp
+code/help.cpp: In destructor 'virtual NKlein_54321::Help::~Help()':
+code/help.cpp:35:26: warning: deleting object of polymorphic class type 'NKlein_54321::Font' which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+   35 |             delete this->font;
+      |                          ^~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/flipflop.o code/flipflop.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/flipflopController.o code/flipflopController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/flipflopView.o code/flipflopView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/bomb.o code/bomb.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/bombController.o code/bombController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/bombView.o code/bombView.cpp
+code/bombView.cpp: In destructor 'virtual NKlein_54321::BombSquadView::~BombSquadView()':
+code/bombView.cpp:28:26: warning: deleting object of polymorphic class type 'NKlein_54321::Font' which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+   28 |             delete this->font;
+      |                          ^~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/maze.o code/maze.cpp
+code/maze.cpp: In member function 'void NKlein_54321::Maze::reset()':
+code/maze.cpp:74:65: warning: comparison of integer expressions of different signedness: 'long int' and 'unsigned int' [-Wsign-compare]
+   74 |                     if ( setFrom != setTo || ( random() % 100 ) < extraWallPercent ) {
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+code/maze.cpp:44:26: warning: unused variable 'distinctSets' [-Wunused-variable]
+   44 |             unsigned int distinctSets = len;
+      |                          ^~~~~~~~~~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mazeController.o code/mazeController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mazeView.o code/mazeView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/peg.o code/peg.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/pegController.o code/pegController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/pegView.o code/pegView.cpp
+code/pegView.cpp: In destructor 'virtual NKlein_54321::PegView::~PegView()':
+code/pegView.cpp:31:26: warning: deleting object of polymorphic class type 'NKlein_54321::Font' which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+   31 |             delete this->font;
+      |                          ^~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/tile.o code/tile.cpp
+code/tile.cpp: In member function 'void NKlein_54321::Tile::move(unsigned int)':
+code/tile.cpp:122:56: warning: comparison of integer expressions of different signedness: 'NKlein_54321::Cube::CellType' {aka 'int'} and 'unsigned int' [-Wsign-compare]
+  122 |                         hasWon = ( (*this->cube)[ ii ] == ii );
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/tileController.o code/tileController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/tileView.o code/tileView.cpp
+code/tileView.cpp: In destructor 'virtual NKlein_54321::TileView::~TileView()':
+code/tileView.cpp:30:26: warning: deleting object of polymorphic class type 'NKlein_54321::Font' which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+   30 |             delete this->font;
+      |                          ^~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/life.o code/life.cpp
+code/life.cpp: In member function 'void NKlein_54321::Life::generation()':
+code/life.cpp:82:18: warning: unused variable 'update' [-Wunused-variable]
+   82 |             bool update = false;
+      |                  ^~~~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/lifeController.o code/lifeController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/lifeView.o code/lifeView.cpp
+code/lifeView.cpp: In destructor 'virtual NKlein_54321::LifeView::~LifeView()':
+code/lifeView.cpp:24:20: warning: deleting object of polymorphic class type 'NKlein_54321::Font' which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+   24 |             delete font;
+      |                    ^~~~
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/sdl2compat.o code/sdl2compat.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/main.o code/main.cpp
+SYS1003: The syntax of the command is incorrect.
+make: [makefile.os2:84: Release/bin/OS2/54321.exe] Error 1 (ignored)
+g++ -Zomf -Zhigh-mem -Zmap -Zstack 0x10000 -o Release/bin/OS2/54321.exe code/cube.o code/font.o code/soundDev.o code/controller.o code/view.o code/mainmenuController.o code/mainmenuView.o code/help.o code/flipflop.o code/flipflopController.o code/flipflopView.o code/bomb.o code/bombController.o code/bombView.o code/maze.o code/mazeController.o code/mazeView.o code/peg.o code/pegController.o code/pegView.o code/tile.o code/tileController.o code/tileView.o code/life.o code/lifeController.o code/lifeView.o code/sdl2compat.o code/main.o C:/usr/lib/SDL2main.a -LC:/usr/lib -lSDL2 -lSDL2_image -lm
+Error! E3008: cannot open Release/bin/OS2/54321.map : No such file or directory
+make: *** [makefile.os2:85: Release/bin/OS2/54321.exe] Error 1

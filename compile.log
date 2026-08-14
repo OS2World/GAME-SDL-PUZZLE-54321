@@ -1,0 +1,144 @@
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/cube.o code/cube.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/font.o code/font.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/soundDev.o code/soundDev.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/controller.o code/controller.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/view.o code/view.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mainmenuController.o code/mainmenuController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mainmenuView.o code/mainmenuView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/help.o code/help.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/flipflop.o code/flipflop.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/flipflopController.o code/flipflopController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/flipflopView.o code/flipflopView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/bomb.o code/bomb.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/bombController.o code/bombController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/bombView.o code/bombView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/maze.o code/maze.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mazeController.o code/mazeController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/mazeView.o code/mazeView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/peg.o code/peg.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/pegController.o code/pegController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/pegView.o code/pegView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/tile.o code/tile.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/tileController.o code/tileController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/tileView.o code/tileView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/life.o code/life.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/lifeController.o code/lifeController.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/lifeView.o code/lifeView.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/sdl2compat.o code/sdl2compat.cpp
+g++ -Wall -O2 -Zomf -Zhigh-mem -I code -include code/os2fix.h -include code/sdl2compat.h -IC:/usr/include/SDL2 -D_REENTRANT -c -o code/main.o code/main.cpp
+g++ -Zomf -Zhigh-mem -Zmap -Zstack 0x10000 -o Release/bin/OS2/54321.exe code/cube.o code/font.o code/soundDev.o code/controller.o code/view.o code/mainmenuController.o code/mainmenuView.o code/help.o code/flipflop.o code/flipflopController.o code/flipflopView.o code/bomb.o code/bombController.o code/bombView.o code/maze.o code/mazeController.o code/mazeView.o code/peg.o code/pegController.o code/pegView.o code/tile.o code/tileController.o code/tileView.o code/life.o code/lifeController.o code/lifeView.o code/sdl2compat.o code/main.o C:/usr/lib/SDL2main.a -LC:/usr/lib -lSDL2 -lSDL2_image -lm code/54321.def
+cp -p images/z2.png Release/data/z2.png
+cp -p images/wall6.png Release/data/wall6.png
+cp -p images/victory.png Release/data/victory.png
+cp -p images/centers.png Release/data/centers.png
+cp -p images/font.png Release/data/font.png
+cp -p images/_png.png Release/data/_png.png
+cp -p images/goal.png Release/data/goal.png
+cp -p images/defeat.png Release/data/defeat.png
+cp -p images/wall0.png Release/data/wall0.png
+cp -p images/borders.png Release/data/borders.png
+cp -p images/on.png Release/data/on.png
+cp -p images/threed.png Release/data/threed.png
+cp -p images/wall3.png Release/data/wall3.png
+cp -p images/back.png Release/data/back.png
+cp -p images/wall1.png Release/data/wall1.png
+cp -p images/marked.png Release/data/marked.png
+cp -p images/continue.png Release/data/continue.png
+cp -p images/dimOn.png Release/data/dimOn.png
+cp -p images/actOn.png Release/data/actOn.png
+cp -p images/flogo.png Release/data/flogo.png
+cp -p images/bomb.png Release/data/bomb.png
+cp -p images/overlay.png Release/data/overlay.png
+cp -p images/setOn.png Release/data/setOn.png
+cp -p images/wall4.png Release/data/wall4.png
+cp -p images/helpOff.png Release/data/helpOff.png
+cp -p images/peg.png Release/data/peg.png
+cp -p images/_sdl.png Release/data/_sdl.png
+cp -p images/unmarked.png Release/data/unmarked.png
+cp -p images/mlogo.png Release/data/mlogo.png
+cp -p images/covered.png Release/data/covered.png
+cp -p images/me.png Release/data/me.png
+cp -p images/wall2.png Release/data/wall2.png
+cp -p images/pointer.png Release/data/pointer.png
+cp -p images/off.png Release/data/off.png
+cp -p images/uncovered.png Release/data/uncovered.png
+cp -p images/tlogo.png Release/data/tlogo.png
+cp -p images/moverlay.png Release/data/moverlay.png
+cp -p images/helpOn.png Release/data/helpOn.png
+cp -p images/hole.png Release/data/hole.png
+cp -p images/flagged.png Release/data/flagged.png
+cp -p images/_umlaut.png Release/data/_umlaut.png
+cp -p images/wall7.png Release/data/wall7.png
+cp -p images/blogo.png Release/data/blogo.png
+cp -p images/plogo.png Release/data/plogo.png
+cp -p images/dimOff.png Release/data/dimOff.png
+cp -p images/_bvfonts.png Release/data/_bvfonts.png
+cp -p images/backdrop.png Release/data/backdrop.png
+cp -p images/_nklein.png Release/data/_nklein.png
+cp -p images/panel.png Release/data/panel.png
+cp -p images/actOff.png Release/data/actOff.png
+cp -p images/selected.png Release/data/selected.png
+cp -p images/setOff.png Release/data/setOff.png
+cp -p images/wall5.png Release/data/wall5.png
+cp -p images/empty.png Release/data/empty.png
+cp -p images/help.png Release/data/help.png
+cp -p data/b3-1n.peg Release/data/b3-1n.peg
+cp -p data/b2-1n.peg Release/data/b2-1n.peg
+cp -p data/b2-1w.peg Release/data/b2-1w.peg
+cp -p data/b4-2n.peg Release/data/b4-2n.peg
+cp -p data/b4-0n.peg Release/data/b4-0n.peg
+cp -p data/b4-1w.peg Release/data/b4-1w.peg
+cp -p data/b3-2n.peg Release/data/b3-2n.peg
+cp -p data/b3-0n.peg Release/data/b3-0n.peg
+cp -p data/b2-2n.peg Release/data/b2-2n.peg
+cp -p data/b3-2w.peg Release/data/b3-2w.peg
+cp -p data/b2-0n.peg Release/data/b2-0n.peg
+cp -p data/b3-0w.peg Release/data/b3-0w.peg
+cp -p data/b2-2w.peg Release/data/b2-2w.peg
+cp -p data/b3-1w.peg Release/data/b3-1w.peg
+cp -p data/b2-0w.peg Release/data/b2-0w.peg
+cp -p data/b4-2w.peg Release/data/b4-2w.peg
+cp -p data/b4-1n.peg Release/data/b4-1n.peg
+cp -p data/b4-0w.peg Release/data/b4-0w.peg
+cp -p data/pj4.hlp Release/data/pj4.hlp
+cp -p data/wn7.hlp Release/data/wn7.hlp
+cp -p data/nd4.hlp Release/data/nd4.hlp
+cp -p data/cr3.hlp Release/data/cr3.hlp
+cp -p data/ff2.hlp Release/data/ff2.hlp
+cp -p data/wn6.hlp Release/data/wn6.hlp
+cp -p data/nd1.hlp Release/data/nd1.hlp
+cp -p data/wn4.hlp Release/data/wn4.hlp
+cp -p data/nd5.hlp Release/data/nd5.hlp
+cp -p data/nd3.hlp Release/data/nd3.hlp
+cp -p data/mr2.hlp Release/data/mr2.hlp
+cp -p data/mr1.hlp Release/data/mr1.hlp
+cp -p data/pj2.hlp Release/data/pj2.hlp
+cp -p data/wn8.hlp Release/data/wn8.hlp
+cp -p data/pj1.hlp Release/data/pj1.hlp
+cp -p data/cr1.hlp Release/data/cr1.hlp
+cp -p data/ts2.hlp Release/data/ts2.hlp
+cp -p data/nd2.hlp Release/data/nd2.hlp
+cp -p data/top.hlp Release/data/top.hlp
+cp -p data/wn9.hlp Release/data/wn9.hlp
+cp -p data/wn3.hlp Release/data/wn3.hlp
+cp -p data/wn10.hlp Release/data/wn10.hlp
+cp -p data/nd7.hlp Release/data/nd7.hlp
+cp -p data/ff4.hlp Release/data/ff4.hlp
+cp -p data/bs2.hlp Release/data/bs2.hlp
+cp -p data/ts1.hlp Release/data/ts1.hlp
+cp -p data/wn5.hlp Release/data/wn5.hlp
+cp -p data/cr2.hlp Release/data/cr2.hlp
+cp -p data/pj3.hlp Release/data/pj3.hlp
+cp -p data/ff1.hlp Release/data/ff1.hlp
+cp -p data/nd6.hlp Release/data/nd6.hlp
+cp -p data/mr3.hlp Release/data/mr3.hlp
+cp -p data/wn1.hlp Release/data/wn1.hlp
+cp -p data/bs4.hlp Release/data/bs4.hlp
+cp -p data/wn2.hlp Release/data/wn2.hlp
+cp -p data/ts3.hlp Release/data/ts3.hlp
+cp -p data/bs1.hlp Release/data/bs1.hlp
+cp -p data/ff3.hlp Release/data/ff3.hlp
+cp -p data/nd8.hlp Release/data/nd8.hlp
+cp -p data/cr4.hlp Release/data/cr4.hlp
+cp -p data/ts4.hlp Release/data/ts4.hlp
+cp -p data/bs3.hlp Release/data/bs3.hlp

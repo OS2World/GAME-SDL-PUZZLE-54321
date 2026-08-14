@@ -1,0 +1,105 @@
+# makefile.os2 - GCC/EMX makefile for GAME-SDL-PUZZLE-54321 under ArcaOS
+#
+# Requires SDL2, SDL2_image from ANPM/RPM.
+# Usage: make -f makefile.os2
+#        make -f makefile.os2 clean
+#
+# Output layout mirrors the GNUmakefile so data paths resolve correctly:
+#   Release/bin/OS2/54321.exe   <- executable
+#   Release/data/               <- images, .peg and .hlp files
+
+SHELL   = sh
+CC      = g++
+CODE    = code
+ARCH    = OS2
+BUILD   = Release/bin/$(ARCH)
+DATA    = Release/data
+
+# os2fix.h neutralizes legacy OS/2 memory-model keywords (_far, _near, etc.).
+# Shadow headers in code/ are searched first via -I $(CODE):
+#   errno.h  - prevents conflict between GCC include-fixed stdlib.h and
+#              the OS/2 system errno.h (_near volatile errno declaration).
+#   ctype.h  - provides classification macros without the __ctype symbol
+#              that wlink cannot resolve from the C runtime import library.
+# sdl2compat.h replaces SDL_UpdateRect with an SDL2 renderer present call.
+OS2FIX  = -include $(CODE)/os2fix.h
+
+CFLAGS  = -Wall -O2 -Zomf -Zhigh-mem \
+          -I $(CODE) \
+          $(OS2FIX) \
+          -include $(CODE)/sdl2compat.h \
+          $(shell sdl2-config --cflags)
+
+export EMXOMFLD_TYPE    = WLINK
+export EMXOMFLD_LINKER  = wl.exe
+export EMXOMFLD_PRELINK = 0
+export EMXOMFLD_SYSTEM  = os2v2_pm
+
+LDFLAGS = -Zomf -Zhigh-mem -Zmap -Zstack 0x10000
+LIBS    = C:/usr/lib/SDL2main.a $(shell sdl2-config --libs) -lSDL2_image -lm
+
+SRCS = \
+    $(CODE)/cube.cpp \
+    $(CODE)/font.cpp \
+    $(CODE)/soundDev.cpp \
+    $(CODE)/controller.cpp \
+    $(CODE)/view.cpp \
+    $(CODE)/mainmenuController.cpp \
+    $(CODE)/mainmenuView.cpp \
+    $(CODE)/help.cpp \
+    $(CODE)/flipflop.cpp \
+    $(CODE)/flipflopController.cpp \
+    $(CODE)/flipflopView.cpp \
+    $(CODE)/bomb.cpp \
+    $(CODE)/bombController.cpp \
+    $(CODE)/bombView.cpp \
+    $(CODE)/maze.cpp \
+    $(CODE)/mazeController.cpp \
+    $(CODE)/mazeView.cpp \
+    $(CODE)/peg.cpp \
+    $(CODE)/pegController.cpp \
+    $(CODE)/pegView.cpp \
+    $(CODE)/tile.cpp \
+    $(CODE)/tileController.cpp \
+    $(CODE)/tileView.cpp \
+    $(CODE)/life.cpp \
+    $(CODE)/lifeController.cpp \
+    $(CODE)/lifeView.cpp \
+    $(CODE)/sdl2compat.cpp \
+    $(CODE)/main.cpp
+
+OBJS = $(SRCS:$(CODE)/%.cpp=$(CODE)/%.o)
+
+TARGET = $(BUILD)/54321.exe
+
+IMAGE_FILES = $(wildcard images/*.png)
+DATA_IMGS   = $(patsubst images/%.png,$(DATA)/%.png,$(IMAGE_FILES))
+PEG_FILES   = $(wildcard data/*.peg)
+DATA_PEGS   = $(patsubst data/%.peg,$(DATA)/%.peg,$(PEG_FILES))
+HLP_FILES   = $(wildcard data/*.hlp)
+DATA_HLPS   = $(patsubst data/%.hlp,$(DATA)/%.hlp,$(HLP_FILES))
+
+all: $(TARGET) $(DATA_IMGS) $(DATA_PEGS) $(DATA_HLPS)
+
+$(TARGET): $(OBJS)
+	-@mkdir -p $(BUILD)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(CODE)/54321.def
+
+$(CODE)/%.o: $(CODE)/%.cpp
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(DATA)/%.png: images/%.png
+	-@mkdir -p $(DATA)
+	cp -p $< $@
+
+$(DATA)/%.peg: data/%.peg
+	-@mkdir -p $(DATA)
+	cp -p $< $@
+
+$(DATA)/%.hlp: data/%.hlp
+	-@mkdir -p $(DATA)
+	cp -p $< $@
+
+clean:
+	rm -f $(OBJS) $(CODE)/*.map $(TARGET) $(BUILD)/*.map
+	rm -rf Release

@@ -18,7 +18,6 @@
                 const NKlein_54321::Cube::CellType& value
             )
         {
-                assert( &value != 0 );
             for ( unsigned int ii=0; ii < ARRAY_LEN; ++ii ) {
                 this->array[ ii ] = value;
             }

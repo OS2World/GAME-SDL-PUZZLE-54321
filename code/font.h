@@ -2,7 +2,7 @@
             class Font {
                     public:
                             Font( void );
-                            ~Font( void );
+                            virtual ~Font( void );
                             virtual void centerMessage(
                                     SDL_Surface* screen,
                                     bool refresh,

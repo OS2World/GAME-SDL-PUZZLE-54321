@@ -107,7 +107,7 @@
                 unsigned int width = 0;
                 for ( const char* ptr = buf; *ptr != 0; ++ptr ) {
                     assert( (unsigned int)*ptr <= END_CHAR );
-                    width += this->widths[ *ptr ];
+                    width += this->widths[ (unsigned char)*ptr ];
                 }
                 xx -= (int)width / 2 + 1;
                 yy -= 16;
@@ -123,7 +123,7 @@
                         SDL_Rect src;
                         src.x = col * 21;
                         src.y = row * 32;
-                        src.w = this->widths[ *ptr ];
+                        src.w = this->widths[ (unsigned char)*ptr ];
                         src.h = 32;
                         ::SDL_BlitSurface( this->image, &src, screen, &dst );
                         dst.x += src.w;

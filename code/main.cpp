@@ -2,7 +2,6 @@
     #include <stdlib.h>
     #include <unistd.h>
     #include <SDL.h>
-    #include <SDL_keysym.h>
     #include "cube.h"
     #include "font.h"
     #include "soundDev.h"
@@ -38,25 +37,38 @@
                     fprintf( stdout, "Failed to init SDL: %s\n", ::SDL_GetError() );
                     return __LINE__;
                 }
-                unsigned int videoFlags = 0;
-
-                videoFlags |= SDL_SWSURFACE;
-                if ( argc <= 1 ) {
-                    videoFlags |= SDL_FULLSCREEN;
+                SDL_Window* window = ::SDL_CreateWindow(
+                        "54321 v1.0.2001.11.16",
+                        SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                        800, 600,
+                        SDL_WINDOW_SHOWN
+                    );
+                if ( argc <= 1 && window != 0 ) {
+                    ::SDL_SetWindowFullscreen( window, SDL_WINDOW_FULLSCREEN_DESKTOP );
                 }
-
-                SDL_Surface* screen = ::SDL_SetVideoMode(
-                        800, 600, 24, videoFlags
+                SDL_Renderer* renderer = 0;
+                if ( window != 0 ) {
+                    renderer = ::SDL_CreateRenderer( window, -1,
+                            SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+                    if ( renderer == 0 ) {
+                        renderer = ::SDL_CreateRenderer( window, -1,
+                                SDL_RENDERER_SOFTWARE );
+                    }
+                }
+                if ( renderer != 0 ) {
+                    ::SDL_RenderSetLogicalSize( renderer, 800, 600 );
+                }
+                SDL_Surface* screen = ::SDL_CreateRGBSurface(
+                        0, 800, 600, 24, 0, 0, 0, 0
                     );
 
-                if ( screen == 0 ) {
+                if ( window == 0 || renderer == 0 || screen == 0 ) {
                     fprintf( stdout, "Failed to set video mode: %s\n",
                             ::SDL_GetError()
                         );
                     return __LINE__;
                 }
-                ::SDL_WM_SetCaption( "54321 v1.0.2001.11.16", "54321" );
-                ::SDL_SetGamma( 1.6, 1.6, 1.6 );
+                SDL2_SetRenderer( renderer );
                 NKlein_54321::SoundDev* soundDev = new NKlein_54321::SoundDev;
 
                 if ( ! soundDev->isOpened() ) {
@@ -87,7 +99,7 @@
                                 unsigned int xx = event.button.x;
                                 unsigned int yy = event.button.y;
                                 unsigned int buttonNumber = event.button.button;
-                                unsigned int mask = KMOD_META | KMOD_SHIFT;
+                                unsigned int mask = KMOD_GUI | KMOD_SHIFT;
 
                                 if ( ( ::SDL_GetModState() & mask ) != 0 ) {
                                     ++buttonNumber;
@@ -154,6 +166,9 @@
             delete controller;
             delete soundDev;
 
+                ::SDL_FreeSurface( screen );
+                ::SDL_DestroyRenderer( renderer );
+                ::SDL_DestroyWindow( window );
                 ::SDL_Quit();
             return 0;
         }
